@@ -67,6 +67,11 @@ Results (Test Set)
 
 The model struggles with outliers, particularly at higher house values, which is visible in the prediction scatter plots.
 
+![OPIM5512-prk23006/A02-prk23006-yhi24001/tree/main/figs/train_act_vs_pred.png](https://github.com/OPIM5512-prk23006/A02-prk23006-yhi24001/tree/main/figs/train_act_vs_pred.png)
+
+
+
+
 ## 📉 Visualization
 Actual vs Predicted plots for:
 Training data
@@ -76,18 +81,6 @@ These plots highlight:
 -Reasonable fit for mid-range values
 -Underprediction for high-value houses
 -Increased error variance in the test set
-
-## 🧪 Observations & Limitations
--Neural networks are sensitive to outliers in regression tasks
--Target variable was not transformed (e.g., log-scale), which may impact performance
--Model capacity may be insufficient for capturing extreme price variations
-
-## 🛠️ Tech Stack
--Python
--NumPy
--Pandas
--Matplotlib & Seaborn
--Scikit-learn
 
 ## 📌 Conclusion
 This project demonstrates an end-to-end regression workflow using neural networks on tabular data. While the MLP model captures general trends, handling outliers and improving robustness remains a key challenge.
