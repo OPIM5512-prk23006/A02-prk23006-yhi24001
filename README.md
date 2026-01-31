@@ -67,7 +67,10 @@ Results (Test Set)
 
 The model struggles with outliers, particularly at higher house values, which is visible in the prediction scatter plots.
 
-![OPIM5512-prk23006/A02-prk23006-yhi24001/tree/main/figs/train_act_vs_pred.png](https://github.com/OPIM5512-prk23006/A02-prk23006-yhi24001/tree/main/figs/train_act_vs_pred.png)
+![train_act_vs_pred.png](figs/train_act_vs_pred.png)
+![test_act_vs_pred.png](figs/test_act_vs_pred.png)
+
+
 
 
 
