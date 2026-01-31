@@ -27,12 +27,67 @@ Helps to visualize:
  -Skewness and presence of outliers
  -Scale differences between variables
 
-#✂️ Train–Test Split
-Train size: 80%
-
-Test size: 20%
-
-Random state: 42
-
+## ✂️ Train–Test Split
+Train size: 80%, Test size: 20%, Random state: 42
 Target variable separated before splitting. 
+
+## ⚙️Data Preprocessing
+Feature Scaling
+Different scaling strategies were applied using a ColumnTransformer:
+StandardScaler applied to:
+- MedInc
+- HouseAge
+- AveRooms
+- AveBedrms
+- Population
+- AveOccup
+
+No scaling (passthrough):
+-Latitude
+-Longitude
+This ensures numerical stability for the neural network while preserving geographic features.
  
+## 🧠 Model: MLP Regressor
+A Multi-Layer Perceptron Regressor was trained with the following configuration:
+Hidden layers: (16, 8)
+Learning rate: 0.01
+Max iterations: 1000
+Early stopping: Enabled
+Random state: 67
+The model was trained on scaled training data and evaluated on both training and test sets.
+
+## 📈 Model Evaluation
+Metrics Used
+Root Mean Squared Error (RMSE)
+Mean Absolute Error (MAE) 
+
+Results (Test Set)
+ -RMSE: 0.76
+ -MAE: 0.56
+
+The model struggles with outliers, particularly at higher house values, which is visible in the prediction scatter plots.
+
+## 📉 Visualization
+Actual vs Predicted plots for:
+Training data
+Test data
+
+These plots highlight:
+-Reasonable fit for mid-range values
+-Underprediction for high-value houses
+-Increased error variance in the test set
+
+## 🧪 Observations & Limitations
+-Neural networks are sensitive to outliers in regression tasks
+-Target variable was not transformed (e.g., log-scale), which may impact performance
+-Model capacity may be insufficient for capturing extreme price variations
+
+## 🛠️ Tech Stack
+-Python
+-NumPy
+-Pandas
+-Matplotlib & Seaborn
+-Scikit-learn
+
+## 📌 Conclusion
+This project demonstrates an end-to-end regression workflow using neural networks on tabular data. While the MLP model captures general trends, handling outliers and improving robustness remains a key challenge.
